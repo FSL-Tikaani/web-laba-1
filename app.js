@@ -147,3 +147,15 @@ if (randomFactBtn && cardFact) {
     }
   });
 }
+
+// 6. Кнопка «К секретному разделу» — раскрыть скрытый блок и плавно прокрутить к нему
+const scrollSectionBtn = document.querySelector("#scroll-section-btn");
+const secretSection = document.querySelector("#secret-section");
+
+if (scrollSectionBtn && secretSection) {
+  scrollSectionBtn.addEventListener("click", () => {
+    secretSection.classList.remove("hidden");
+    secretSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    scrollSectionBtn.textContent = "Секретный раздел открыт ✓";
+  });
+}
