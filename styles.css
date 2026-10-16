@@ -1,0 +1,76 @@
+/* Базовые переменные: Тёмная тема (по умолчанию) */
+:root {
+  --bg-color: #0b1120;
+  --bg-alt: #111827;
+  --surface-color: #1e293b;
+  --surface-border: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-primary: #38bdf8;
+  --accent-contrast: #0f172a;
+  --accent-bg: rgba(56, 189, 248, 0.14);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Белая тема (активируется по кнопке #theme) */
+body.light-theme,
+body.warm {
+  --bg-color: #ffffff;
+  --bg-alt: #f1f5f9;
+  --surface-color: #f8fafc;
+  --surface-border: #cbd5e1;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --accent-primary: #0284c7;
+  --accent-contrast: #ffffff;
+  --accent-bg: rgba(2, 132, 199, 0.12);
+  --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-wrap: break-word;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.82;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Служебный класс скрытия */
+.hidden {
+  display: none !important;
+}
