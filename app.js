@@ -123,3 +123,27 @@ if (prevCardBtn) {
     renderMovieCard(currentCardIndex);
   });
 }
+
+// 5. Кнопка «Случайный факт о съёмках»
+const extraCinemaFacts = [
+  "На обдумывание одного кадра чёрной дыры в «Интерстелларе» у рендер-фермы уходило до 100 часов вычислений, а общий объём данных превысил 800 терабайт.",
+  "Перед началом съёмок «Матрицы» основные актёры четыре месяца ежедневно проходили курс восточных единоборств и трюковой подготовки.",
+  "В «Бегущем по лезвию 2049» большинство футуристических интерьеров и миниатюр зданий были построены физически, чтобы свет отражался естественно.",
+  "Музыкальную тему «Интерстеллара» Ханс Циммер написал на старинном органе в лондонской церкви Темпл XII века, даже не зная сначала, что фильм будет о космосе."
+];
+
+let lastFactIndex = -1;
+
+if (randomFactBtn && cardFact) {
+  randomFactBtn.addEventListener("click", () => {
+    let nextIndex = Math.floor(Math.random() * extraCinemaFacts.length);
+    if (nextIndex === lastFactIndex) {
+      nextIndex = (nextIndex + 1) % extraCinemaFacts.length;
+    }
+    lastFactIndex = nextIndex;
+    cardFact.textContent = extraCinemaFacts[nextIndex];
+    if (factBox) {
+      factBox.classList.add("highlight");
+    }
+  });
+}
