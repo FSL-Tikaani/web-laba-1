@@ -19,6 +19,20 @@ if (detailsBtn && projectDetails) {
   });
 }
 
+// 3. Кнопки «Подробнее» внутри карточек каталога фильмов
+const cardToggleButtons = document.querySelectorAll(".toggle-card-btn");
+
+cardToggleButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const targetId = btn.getAttribute("data-target");
+    const extraBlock = document.getElementById(targetId);
+    if (extraBlock) {
+      const isHidden = extraBlock.classList.toggle("hidden");
+      btn.textContent = isHidden ? "Подробнее" : "Скрыть";
+    }
+  });
+});
+
 // 4. Интерактивный переключатель карточек («Следующая карточка» / «Предыдущая»)
 const moviesData = [
   {
