@@ -7,3 +7,14 @@ if (themeButton) {
     themeButton.textContent = isLight ? "Темная тема" : "Белая тема";
   });
 }
+
+// 2. Кнопка «Подробнее о клубе» в первом экране
+const detailsBtn = document.querySelector("#details-btn");
+const projectDetails = document.querySelector("#project-details");
+
+if (detailsBtn && projectDetails) {
+  detailsBtn.addEventListener("click", () => {
+    const isHidden = projectDetails.classList.toggle("hidden");
+    detailsBtn.textContent = isHidden ? "Подробнее о клубе" : "Скрыть описание";
+  });
+}
